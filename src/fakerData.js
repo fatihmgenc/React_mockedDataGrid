@@ -1,5 +1,3 @@
-import { address, random } from 'faker';
-
 export function createFakeData(amount) {
     var faker = require('faker');
     var randomCard = [];
