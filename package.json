@@ -8,11 +8,15 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "devextreme": "^20.2.4",
+    "devextreme-react": "20.2.3",
+    "faker": "^5.4.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
     "sweetalert2": "^10.15.5",
+    "vest": "^3.1.2",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
@@ -40,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "axios-mock-adapter": "^1.19.0"
+    "axios-mock-adapter": "^1.19.0",
+    "devextreme-themebuilder": "^20.2.4"
   }
 }

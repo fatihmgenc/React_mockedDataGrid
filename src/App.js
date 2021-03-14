@@ -1,7 +1,10 @@
 import HookForm from "./components/HookForm"
-import { Component, useState } from "react"
+import React, { useState } from "react"
 import axios from "axios"
-import Swal from 'sweetalert2'
+import Grid from "./components/Grid"
+
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.css';
 import "./dist/css/main.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,20 +13,16 @@ const App = () => {
 
   var MockAdapter = require("axios-mock-adapter");
   var mock = new MockAdapter(axios);
-  mock.onPost("/login", { params: { email: "admin", password: "admin" } }).reply(200, {
-    result: true
-  });
-  mock.onPost("/login", { params: { email: "a", password: "a" } }).reply(200, {
-    result: false
-  });
+  mock.onPost("/login", { params: { username: "admin", password: "admin" } }).reply(200, { result: true });
+  mock.onPost("/login", { params: { username: "a", password: "a" } }).reply(200, { result: false });
+
+
   const Swal = require('sweetalert2')
-
-
   const onSubmit = (data) => {
 
     try {
-
-      axios.post("/login", { params: { email: data.email, password: data.password } }).catch(err => {
+      console.log(data)
+      axios.post("/login", { params: { username: data.username, password: data.password } }).catch(err => {
         showSwal(false);
         throw Error;
       }).then(function (response) {
@@ -52,7 +51,7 @@ const App = () => {
   return (
     <div className="App" >
       {!login && <HookForm onSubmit={onSubmit} ></HookForm>}
-      {login && <p>Hello grid will be here</p>}
+      {login && <Grid>Hello grid will be here</Grid>}
     </div>
   );
 }

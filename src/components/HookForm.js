@@ -1,8 +1,8 @@
-import { React } from 'react'
+import React from "react";
 import { useForm } from 'react-hook-form';
 import { Button, Badge } from "react-bootstrap";
 import "../dist/css/main.css";
-
+// burada Vestin inputunu kullan,, context api ile de onsubmit propunu taşı . 
 function HookForm(props) {
     const onSubmit = props.onSubmit;
     const { register, handleSubmit, errors } = useForm(); // initialize the hook
@@ -11,13 +11,13 @@ function HookForm(props) {
         <div className="hookForm">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
-                    <Badge variant="warning">Email</Badge>
+                    <Badge variant="warning">username</Badge>
                     <input
-                        name="email"
-                        placeholder="Enter email"
+                        name="username"
+                        label="Username"
                         className={"form-control"}
                         ref={register({
-                            required: "Email is required"
+                            required: "username is required"
                         })}
                     />
                 </div>
@@ -37,7 +37,6 @@ function HookForm(props) {
 
                 <Button variant="primary" type="submit" size="lg" block>Submit</Button>
             </form>
-            {false && <p>Welcome</p>}
         </div>
     );
 }
