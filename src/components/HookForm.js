@@ -5,7 +5,7 @@ import "../dist/css/main.css";
 // burada Vestin inputunu kullan,, context api ile de onsubmit propunu taşı . 
 function HookForm(props) {
     const onSubmit = props.onSubmit;
-    const { register, handleSubmit, errors } = useForm(); // initialize the hook
+    const { register, handleSubmit } = useForm(); // initialize the hook
 
     return (
         <div className="hookForm">
@@ -37,6 +37,7 @@ function HookForm(props) {
 
                 <Button variant="primary" type="submit" size="lg" block>Submit</Button>
             </form>
+            <p>username&password:admin</p>
         </div>
     );
 }

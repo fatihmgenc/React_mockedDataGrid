@@ -6,6 +6,5 @@ export function createFakeData(amount) {
         randomCard.push(faker.helpers.createCard())
     }
     randomCard.forEach(c => { c.address = c.address.city })
-    console.log(randomCard)
     return randomCard;
 }

@@ -13,7 +13,7 @@ import GreetingHeader from "./GreetingHeader"
 const pageSizes = [10, 25, 50, 100];
 
 const dataSourceOptions = {
-    store: createFakeData(10)
+    store: createFakeData(1000)
 };
 
 
